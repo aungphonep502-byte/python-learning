@@ -1,4 +1,4 @@
- Phones = ["Samsung", "Apple", "oppo", "Xiaomi","Vivo"]
+Phones = ["Samsung", "Apple", "oppo", "Xiaomi","Vivo"]
 # Access first and last item using index and negative index
 # print(Phones[0])
 # print(Phones[-1])
