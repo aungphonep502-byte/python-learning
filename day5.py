@@ -1,5 +1,4 @@
-''' 
-Phones = ["Samsung", "Apple", "oppo", "Xiaomi","Vivo"]
+ Phones = ["Samsung", "Apple", "oppo", "Xiaomi","Vivo"]
 # Access first and last item using index and negative index
 # print(Phones[0])
 # print(Phones[-1])
@@ -206,7 +205,7 @@ students = {
 remove_set = [1,1,2,2,3,3]
 remove_duplicate = list(set(remove_set))
 print(remove_duplicate)
-'''
+
 fruits = ["apple",
           "banana",
           "banana",
