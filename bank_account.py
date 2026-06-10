@@ -1,39 +1,47 @@
-# Functions
-# deposit function
-def deposit(account, history):
-    amount = float(input("Type amount deposit"))
-    account ["balance"] += amount
-    print(f"Sucessfully Deposited {amount}")
-    history.append(f"Deposited ${amount}")
+class BankAccount:
+    def __init__(self, name, balance):
+        self.name = name
+        self.balance = balance
+        self.history = []
 
-# withdraw function
-def withdraw(account, history):
-    amount = float(input("Type amount to withdraw"))
-    if amount <= account["balance"]:
-        account["balance"] -= amount
-        print(f"Sucessfully Withdraw {amount}")
-        history.append(f"WIthdraw ${amount}")
-    else:
-        print("Insufficient balance")
 
-# view_balance function
-def view_balance(account):
-    print(f"Your balance is {account['balance']}")
+    # Functions
+    # deposit function
+    def deposit(self):
+        amount = float(input("Type amount deposit"))
+        self.balance += amount
+        self.history.append(f"Deposited ${amount}")
+        print(f"Sucessfully Deposited {amount}")
+        
 
-# history function
-def view_history(history):
-    if len(history) == 0:
-        print("No transcations found")
-    else:
-        print("\nTranscation History")
-        for item in history:
-            print(item)
+    # withdraw function
+    def withdraw(self):
+        amount = float(input("Type amount to withdraw"))
+        if amount <= self.balance:
+            self.balance -= amount
+            self.history.append(f"WIthdraw ${amount}")
+            print(f"Sucessfully Withdraw {amount}")
+            
+        else:
+            print("Insufficient balance")
+
+    # view_balance function
+    def view_balance(self):
+        print(f"Your balance is {self.balance}")
+
+    # history function
+    def view_history(self):
+        if len(self.history) == 0:
+            print("No transcations found")
+        else:
+            print("\nTranscation History")
+            for item in self.history:
+                print(item)
 
 
 # main program
 history = []
-account = {"name":"app",
-           "balance":1000}
+account = BankAccount("app", 1000)
 
 while True:
     print("\n==========Bank Menu==========")
@@ -45,16 +53,16 @@ while True:
 
     choose = input("Choose your option")
     if choose == "1":
-        deposit(account,history)
+        account.deposit()
     
     elif choose == "2":
-        withdraw(account,history)
+        account.withdraw()
     
     elif choose == "3":
-        view_balance(account)
+        account.view_balance()
     
     elif choose == "4":
-        view_history(history)
+        account.view_history()
 
     elif choose == "5":
         print("Exist")
